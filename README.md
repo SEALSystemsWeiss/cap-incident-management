@@ -1,8 +1,14 @@
 # Getting Started
 
 Welcome to your new project.
+CAP SAP course CLD200
+
+https://developers.sap.com/group.cap-application-full-stack.html
 
 It contains these folders and files, following our recommended project layout:
+
+## Branches
+- Add SAP Fiori Elements UIs => Add-SAP-Fiori-Elements-UIs
 
 File or Folder | Purpose
 ---------|----------
