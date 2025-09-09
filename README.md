@@ -5,6 +5,9 @@ CAP SAP course CLD200
 
 https://developers.sap.com/group.cap-application-full-stack.html
 
+Building side-by-side extensions on SAP BTP
+https://learning.sap.com/learning-journeys/build-side-by-side-extensions-on-sap-btp
+
 It contains these folders and files, following our recommended project layout:
 
 ## Branches
