@@ -15,12 +15,25 @@
       "version": "1.18.4",
       "toolsId": "f23507a6-7036-4065-b5a2-01a252212f28"
     },
+		"crossNavigation": {
+			"inbounds": {
+				"intent1": {
+					"signature": {
+						"parameters": {},
+						"additionalParameters": "allowed"
+					},
+					"semanticObject": "Incidents",
+					"action": "display"
+				}
+			}
+		},
     "dataSources": {
       "mainService": {
-        "uri": "/odata/v4/processor/",
+        "uri": "odata/v4/processor/",
         "type": "OData",
         "settings": {
           "annotations": [],
+          "localUri": "localService/metadata.xml",
           "odataVersion": "4.0"
         }
       }
@@ -148,5 +161,9 @@
   "sap.fiori": {
     "registrationIds": [],
     "archeType": "transactional"
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "incidentmanagement.service"
   }
 }
