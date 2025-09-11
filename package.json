@@ -2,10 +2,14 @@
   "name": "incident-management",
   "version": "1.0.0",
   "description": "A simple CAP project.",
-  "repository": "<Add your repository here>",
+  "repository": "https://github.com/SEALSystemsWeiss/cap-incident-management",
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
+    "@sap-cloud-sdk/connectivity": "^3.26.4",
+    "@sap-cloud-sdk/http-client": "^3.26.4",
+    "@sap-cloud-sdk/resilience": "^3.26.4",
+    "@sap-cloud-sdk/util": "^3.26.4",
     "@sap/cds": "^9",
     "express": "^4"
   },
@@ -13,12 +17,39 @@
     "node": ">=20"
   },
   "devDependencies": {
-    "@cap-js/sqlite": "^2",
-    "@cap-js/cds-types": "^0.13.0"
+    "@cap-js/cds-test": "^0.4.0",
+    "@cap-js/cds-types": "^0.13.0",
+    "@cap-js/sqlite": "^2"
   },
   "scripts": {
     "start": "cds-serve",
-    "watch-incidents": "cds watch --open incidents/webapp/index.html?sap-ui-xx-viewCache=false"
+    "watch-incidents": "cds watch --open incidents/webapp/index.html?sap-ui-xx-viewCache=false",
+    "test": "npx jest tests/test.js"
+  },
+  "cds": {
+    "requires": {
+      "[development]": {
+        "auth": {
+          "kind": "mocked",
+          "users": {
+            "alice": {
+              "roles": [
+                "support"
+              ]
+            },
+            "bob": {
+              "roles": [
+                "support"
+              ]
+            }
+          }
+        }
+      },
+      "API_BUSINESS_PARTNER": {
+        "kind": "odata-v2",
+        "model": "srv/external/API_BUSINESS_PARTNER"
+      }
+    }
   },
   "sapux": [
     "app/incidents"
